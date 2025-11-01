@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://q744ce118v71"]
+
+[ext_resource type="Texture2D" uid="uid://7us5qeekvmr5" path="res://assets/TileSheet/objects.png" id="1_kef7h"]
+[ext_resource type="Script" path="res://Scripts/base_flower.gd" id="1_script"]
+
+[node name="BaseFlower" type="Node2D"]
+script = ExtResource("1_script")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_kef7h")
+region_enabled = true
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
