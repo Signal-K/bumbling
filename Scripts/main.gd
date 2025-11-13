@@ -48,7 +48,10 @@ func is_harvestable(key) -> bool:
 	return  data.harvest_ready if data != null else false
 		
 func harvest_plant(key) -> void:
-	var plant = plantedFlowers.get(key)
+	var plant: Flower = plantedFlowers.get(key)
+	if plant.has_method("harvest"):
+		plant.harvest()
+		plantedFlowers.erase(key)
 
 func plant_seed(coord) -> void:
 	var plant = currentSeed.instantiate()
