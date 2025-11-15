@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="PlantName" load_steps=2 format=3 uid="uid://djq8m2k5n9vwx"]
+[gd_resource type="Resource" script_class="PlantName" load_steps=2 format=3 uid="uid://i6ubvfegs3y8"]
 
 [ext_resource type="Script" path="res://Resources/plant_name.gd" id="1_lotus"]
 
