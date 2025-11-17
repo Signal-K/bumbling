@@ -3,14 +3,16 @@ extends TileMap
 @onready var player = $World/Player
 @onready var grid_helper = $World/GridHelper
 
-var currentSeed = preload("res://Scenes/Flowers/bluebell.tscn")
+var currentSeed: SeedData
 var plantedFlowers: Dictionary = {}
 
 func _ready():
 	# Connect the player's plantSeed signal
 	player.plantSeed.connect(_on_player_plant_seed)
+	
+	Global.seed_changed.connect(_on_seed_changed)
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	# Get the player's map coordinate
 	var playerMapCoord = local_to_map(player.global_position)
 	
@@ -54,10 +56,13 @@ func harvest_plant(key) -> void:
 		plantedFlowers.erase(key)
 
 func plant_seed(coord) -> void:
-	var plant = currentSeed.instantiate()
+	var plant = currentSeed.plantScene.instantiate()
 	add_child(plant)
 	
 	plantedFlowers[coord] = plant
 	get_node("World/Flower").add_child(plant)
 	
 	plant.global_position = map_to_local(coord)
+
+func _on_seed_changed(new_seed) -> void:
+	currentSeed = new_seed
