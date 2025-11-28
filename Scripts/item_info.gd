@@ -8,4 +8,4 @@ func set_label(value) -> void:
 	$MarginContainer/TextureRect/Label.text = str(value)
 	
 func play_flash_animation() -> void:
-	$AnimationPlayer.play("flash")
+	$AnimationPlayer.play("Flash")
