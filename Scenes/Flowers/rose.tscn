@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bth00s4371cey"]
+[gd_scene load_steps=9 format=3 uid="uid://bth00s4371cey"]
 
 [ext_resource type="PackedScene" uid="uid://q744ce118v71" path="res://Scenes/Flowers/base_flower.tscn" id="1_jjgce"]
+[ext_resource type="Resource" uid="uid://d7m6k9n2j6pxq" path="res://Resources/flower_lists/rose.tres" id="2_rose"]
 
 [sub_resource type="Animation" id="Animation_hpyw5"]
 resource_name = "0"
@@ -205,6 +206,7 @@ _data = {
 }
 
 [node name="BaseFlower" instance=ExtResource("1_jjgce")]
+plantItem = ExtResource("2_rose")
 
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(0, -5)

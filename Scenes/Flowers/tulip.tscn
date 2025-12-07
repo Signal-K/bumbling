@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bts06fq0laocb"]
+[gd_scene load_steps=9 format=3 uid="uid://bts06fq0laocb"]
 
 [ext_resource type="PackedScene" uid="uid://q744ce118v71" path="res://Scenes/Flowers/base_flower.tscn" id="1_on2lw"]
+[ext_resource type="Resource" uid="uid://b4n9m2k5j8pxw" path="res://Resources/flower_lists/tulip.tres" id="2_tulip"]
 
 [sub_resource type="Animation" id="Animation_fnqa7"]
 resource_name = "0"
@@ -204,6 +205,7 @@ _data = {
 }
 
 [node name="BaseFlower" instance=ExtResource("1_on2lw")]
+plantItem = ExtResource("2_tulip")
 
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(0, -5)

@@ -40,6 +40,10 @@ func add_new_slot(seedArray: Array[SeedData]) -> void:
 		
 func _on_slot_selected(slot_index: int) -> void:
 	select_slot(slot_index)
+	
+func update_inventory() -> void:
+	for child in grid_container.get_children():
+		child.update_quantity()
 
 func select_slot(slot_index: int) -> void:
 	current_slot_index = slot_index

@@ -6,7 +6,9 @@ class_name SeedResource
 
 func get_seed_data(value) -> SeedData:
 	for child in seedList:
-		if child.get_seed_name() == value:
+		var child_name = child.get_seed_name()
+		var value_name = value.get_plant_name() if value is PlantData else value
+		if child_name == value_name:
 			return child
 	return null
 	

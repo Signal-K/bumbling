@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://b6me4vka4ca2"]
+[gd_scene load_steps=9 format=3 uid="uid://b6me4vka4ca2"]
 
 [ext_resource type="PackedScene" uid="uid://q744ce118v71" path="res://Scenes/Flowers/base_flower.tscn" id="1_akw1p"]
+[ext_resource type="Resource" uid="uid://d2oak5m3kapxr" path="res://Resources/flower_lists/iris.tres" id="2_x5xl6"]
 
 [sub_resource type="Animation" id="Animation_s3cd3"]
 resource_name = "0"
@@ -42,33 +43,6 @@ tracks/2/keys = {
 "args": [3.0],
 "method": &"start"
 }]
-}
-
-[sub_resource type="Animation" id="Animation_xnf7k"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, -5)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:region_rect")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Rect2(96, 32, 16, 16)]
 }
 
 [sub_resource type="Animation" id="Animation_uw5o7"]
@@ -195,6 +169,33 @@ tracks/2/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_xnf7k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(96, 32, 16, 16)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hy2wb"]
 _data = {
 "0": SubResource("Animation_s3cd3"),
@@ -205,6 +206,7 @@ _data = {
 }
 
 [node name="BaseFlower" instance=ExtResource("1_akw1p")]
+plantItem = ExtResource("2_x5xl6")
 
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(0, -5)

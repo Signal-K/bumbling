@@ -3,6 +3,7 @@ extends Node2D
 class_name Flower
 
 @export var amount: int = 2
+@export var plantItem: PlantData
 @export var harvest_ready: bool = false
 
 var index = 0
@@ -36,4 +37,5 @@ func _on_timer_timeout():
 		print("Plant fully grown and ready for harvest!")
 		
 func harvest() -> void:
+	plantItem.quantity += amount
 	queue_free()

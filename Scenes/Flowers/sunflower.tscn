@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dkpykh0ia5dnr"]
+[gd_scene load_steps=9 format=3 uid="uid://dkpykh0ia5dnr"]
 
 [ext_resource type="PackedScene" uid="uid://q744ce118v71" path="res://Scenes/Flowers/base_flower.tscn" id="1_3ob4u"]
+[ext_resource type="Resource" uid="uid://c5n10m3k7j2qwt" path="res://Resources/flower_lists/sunflower.tres" id="2_sunflower"]
 
 [sub_resource type="Animation" id="Animation_q0yv8"]
 resource_name = "0"
@@ -205,6 +206,7 @@ _data = {
 }
 
 [node name="BaseFlower" instance=ExtResource("1_3ob4u")]
+plantItem = ExtResource("2_sunflower")
 harvest_ready = true
 
 [node name="Sprite2D" parent="." index="0"]
