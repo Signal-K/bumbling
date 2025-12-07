@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://b73xl7066hum2" path="res://Resources/plant_names/Iris.tres" id="1_iris"]
 [ext_resource type="Script" path="res://Resources/plant_data.gd" id="2_iris"]
-[ext_resource type="Texture2D" uid="uid://cmyrwv13h32f4" path="res://assets/seed bags/iris.png" id="3_iris"]
+[ext_resource type="Texture2D" uid="uid://cmyrwv13h32f4" path="res://assets/Art/Plants/Seeds/iris.png" id="3_iris"]
 
 [resource]
 script = ExtResource("2_iris")

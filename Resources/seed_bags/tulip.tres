@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://dg5u5lfhdg5ur" path="res://Resources/plant_names/Tulip.tres" id="1_tulip"]
 [ext_resource type="Script" path="res://Resources/plant_data.gd" id="2_tulip"]
-[ext_resource type="Texture2D" uid="uid://dw41xsq10p36b" path="res://assets/seed bags/tulip.png" id="3_tulip"]
+[ext_resource type="Texture2D" uid="uid://dw41xsq10p36b" path="res://assets/Art/Plants/Seeds/tulip.png" id="3_tulip"]
 
 [resource]
 script = ExtResource("2_tulip")

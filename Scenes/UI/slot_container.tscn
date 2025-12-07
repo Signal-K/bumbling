@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ccv7ydwk0svys"]
 
 [ext_resource type="PackedScene" uid="uid://vehyc370mm2b" path="res://Scenes/UI/item_info.tscn" id="1_sesdw"]
-[ext_resource type="Script" path="res://Scenes/UI/slot_container.gd" id="1_ug5ch"]
+[ext_resource type="Script" path="res://Scripts/UI/slot_container.gd" id="1_ug5ch"]
 
 [node name="SlotContainer" type="PanelContainer"]
 offset_right = 40.0

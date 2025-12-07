@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://bfk3p9n2m4xyw" path="res://Resources/plant_names/Pansy.tres" id="1_pansy"]
 [ext_resource type="Script" path="res://Resources/plant_data.gd" id="2_pansy"]
-[ext_resource type="Texture2D" uid="uid://blh2u5jsjqcv6" path="res://assets/plants/pansy.png" id="3_pansy"]
+[ext_resource type="Texture2D" uid="uid://blh2u5jsjqcv6" path="res://assets/Art/Plants/Flowers/pansy.png" id="3_pansy"]
 
 [resource]
 script = ExtResource("2_pansy")

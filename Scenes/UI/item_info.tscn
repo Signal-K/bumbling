@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://vehyc370mm2b"]
 
-[ext_resource type="Texture2D" uid="uid://duo31h1qrmf67" path="res://assets/Inventory/Inventory_Slot.png" id="1_gqd5e"]
-[ext_resource type="Script" path="res://Scripts/item_info.gd" id="2_script"]
-[ext_resource type="FontFile" uid="uid://dmc88pspl7ahq" path="res://assets/font/kenvector_future_thin.ttf" id="3_os6j0"]
+[ext_resource type="Texture2D" uid="uid://duo31h1qrmf67" path="res://assets/Art/UI/Inventory/Inventory_Slot.png" id="1_gqd5e"]
+[ext_resource type="Script" path="res://Scripts/UI/item_info.gd" id="2_script"]
+[ext_resource type="FontFile" uid="uid://dmc88pspl7ahq" path="res://assets/Art/Fonts/kenvector_future_thin.ttf" id="3_os6j0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ipswt"]
 font = ExtResource("3_os6j0")

@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://b5fitekj1ggnf"]
 
-[ext_resource type="Texture2D" uid="uid://cr3xo3yott6bg" path="res://assets/TileSheet/tileset.png" id="1_h40pt"]
-[ext_resource type="PackedScene" uid="uid://q2ogejruuewn" path="res://Scenes/player.tscn" id="2_kqqk0"]
-[ext_resource type="Script" uid="uid://db15p3jp5ptel" path="res://Scripts/main.gd" id="2_qmyyx"]
-[ext_resource type="Texture2D" uid="uid://ci7myo8146kwa" path="res://assets/others/grid_selector.png" id="3_3tomv"]
+[ext_resource type="Texture2D" uid="uid://cr3xo3yott6bg" path="res://assets/Art/World/Tiles/tileset.png" id="1_h40pt"]
+[ext_resource type="PackedScene" uid="uid://q2ogejruuewn" path="res://Scenes/Player/player.tscn" id="2_kqqk0"]
+[ext_resource type="Script" uid="uid://db15p3jp5ptel" path="res://Scripts/Core/main.gd" id="2_qmyyx"]
+[ext_resource type="Texture2D" uid="uid://ci7myo8146kwa" path="res://assets/Art/UI/Icons/grid_selector.png" id="3_3tomv"]
 [ext_resource type="PackedScene" uid="uid://c8sqphvguvmsa" path="res://Scenes/UI/hud.tscn" id="5_xv80o"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_oqrau"]

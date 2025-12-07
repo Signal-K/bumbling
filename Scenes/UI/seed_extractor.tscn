@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bbcaqssxca12s"]
 
 [ext_resource type="PackedScene" uid="uid://vehyc370mm2b" path="res://Scenes/UI/item_info.tscn" id="1_1gjb3"]
-[ext_resource type="Script" path="res://Scenes/UI/seed_extractor.gd" id="1_2guoa"]
-[ext_resource type="Texture2D" uid="uid://bwd0kokk6lp16" path="res://assets/others/arrowRight.png" id="2_clqg0"]
-[ext_resource type="Texture2D" uid="uid://cf4jujec4k7te" path="res://assets/others/button_normal.png" id="3_hteg1"]
+[ext_resource type="Script" path="res://Scripts/UI/seed_extractor.gd" id="1_2guoa"]
+[ext_resource type="Texture2D" uid="uid://bwd0kokk6lp16" path="res://assets/Art/UI/Buttons/arrowRight.png" id="2_clqg0"]
+[ext_resource type="Texture2D" uid="uid://cf4jujec4k7te" path="res://assets/Art/UI/Buttons/button_normal.png" id="3_hteg1"]
 
 [node name="SeedExtractor" type="HBoxContainer"]
 offset_right = 247.0

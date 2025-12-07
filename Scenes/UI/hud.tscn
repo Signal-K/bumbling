@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://c8sqphvguvmsa"]
 
-[ext_resource type="Script" path="res://Scenes/UI/hud.gd" id="1_5055i"]
+[ext_resource type="Script" path="res://Scripts/UI/hud.gd" id="1_5055i"]
 [ext_resource type="PackedScene" uid="uid://3nj43ri7ysd1" path="res://Scenes/UI/inventory.tscn" id="1_u5af5"]
-[ext_resource type="PackedScene" uid="uid://xr13yj36wadx" path="res://Scenes/flower_shop.tscn" id="2_lk1v8"]
-[ext_resource type="Texture2D" uid="uid://b16saksy1wrqo" path="res://assets/others/green_circle.png" id="4_12s0w"]
-[ext_resource type="Texture2D" uid="uid://cr1wrrqvqrdww" path="res://assets/others/cart.png" id="5_hkwui"]
+[ext_resource type="PackedScene" uid="uid://xr13yj36wadx" path="res://Scenes/World/flower_shop.tscn" id="2_lk1v8"]
+[ext_resource type="Texture2D" uid="uid://b16saksy1wrqo" path="res://assets/Art/UI/Icons/green_circle.png" id="4_12s0w"]
+[ext_resource type="Texture2D" uid="uid://cr1wrrqvqrdww" path="res://assets/Art/UI/Icons/cart.png" id="5_hkwui"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_5055i")
