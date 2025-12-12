@@ -28,18 +28,24 @@ func get_basic_inputs():
 		current_seed = posmod(current_seed + 1, Enums.Seed.size()) as Enums.Seed
 	
 	if Input.is_action_just_pressed("action"):
+		print("ACTION pressed! Current tool: ", current_tool)
 		tool_state_machine.travel(Data.TOOL_STATE_ANIMATIONS[current_tool])
 		$Animation/AnimationTree.set("parameters/ToolOneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
-		tool_use.emit(current_tool, position)
+		# Calculate the target tile position based on facing direction
+		var blend_pos = $Animation/AnimationTree.get("parameters/MoveStateMachine/Idle/blend_position")
+		var facing_direction = Vector2(
+			round(blend_pos.x),
+			round(blend_pos.y)
+		)
+		# Default to down if not moving
+		if facing_direction == Vector2.ZERO:
+			facing_direction = Vector2(0, 1)
+		var target_pos = position + facing_direction * Data.TILE_SIZE
+		print("Emitting tool_use signal: tool=", current_tool, " blend_pos=", blend_pos, " facing=", facing_direction, " target_pos=", target_pos, " player_pos=", position)
+		tool_use.emit(current_tool, target_pos)
 
 func move():
-	# Check for touch controls
-	var touch_controls = get_tree().get_first_node_in_group("touch_controls")
-	if touch_controls and touch_controls.get_joystick_vector().length() > 0:
-		direction = touch_controls.get_joystick_vector()
-	else:
-		direction = Input.get_vector("left", "right", "up", "down")
-	
+	direction = Input.get_vector("left", "right", "up", "down")
 	velocity = direction * speed
 	move_and_slide()
 	
