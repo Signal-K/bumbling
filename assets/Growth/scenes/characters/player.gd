@@ -5,6 +5,7 @@ var speed := 50
 
 var can_move: bool = true
 
+@onready var animation_tree = $Animation/AnimationTree
 @onready var move_state_machine = $Animation/AnimationTree.get("parameters/MoveStateMachine/playback")
 @onready var tool_state_machine = $Animation/AnimationTree.get("parameters/ToolStateMachine/playback")
 
@@ -12,6 +13,9 @@ var current_tool: Enums.Tool
 var current_seed: Enums.Seed
 
 signal tool_use(tool: Enums.Tool, pos: Vector2)
+
+func _ready():
+	animation_tree.active = true
 
 func _physics_process(delta: float) -> void:
 	if can_move:
@@ -24,25 +28,14 @@ func get_basic_inputs():
 		var dir = Input.get_axis("tool_backward", "tool_forward")
 		current_tool = posmod(current_tool + int(dir), Enums.Tool.size()) as Enums.Tool
 	
-	if Input.is_action_just_pressed("seed_forward"):
+	if Input.is_action_just_pressed("tool_forward"):
 		current_seed = posmod(current_seed + 1, Enums.Seed.size()) as Enums.Seed
 	
 	if Input.is_action_just_pressed("action"):
-		print("ACTION pressed! Current tool: ", current_tool)
 		tool_state_machine.travel(Data.TOOL_STATE_ANIMATIONS[current_tool])
 		$Animation/AnimationTree.set("parameters/ToolOneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
-		# Calculate the target tile position based on facing direction
-		var blend_pos = $Animation/AnimationTree.get("parameters/MoveStateMachine/Idle/blend_position")
-		var facing_direction = Vector2(
-			round(blend_pos.x),
-			round(blend_pos.y)
-		)
-		# Default to down if not moving
-		if facing_direction == Vector2.ZERO:
-			facing_direction = Vector2(0, 1)
-		var target_pos = position + facing_direction * Data.TILE_SIZE
-		print("Emitting tool_use signal: tool=", current_tool, " blend_pos=", blend_pos, " facing=", facing_direction, " target_pos=", target_pos, " player_pos=", position)
-		tool_use.emit(current_tool, target_pos)
+		# Use player's current position
+		tool_use.emit(current_tool, position)
 
 func move():
 	direction = Input.get_vector("left", "right", "up", "down")

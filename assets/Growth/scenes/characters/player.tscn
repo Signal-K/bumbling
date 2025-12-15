@@ -1,7 +1,8 @@
-[gd_scene load_steps=165 format=3 uid="uid://b0mnopqlx5dix"]
+[gd_scene load_steps=166 format=3 uid="uid://b0mnopqlx5dix"]
 
 [ext_resource type="Script" uid="uid://dbmbhotl3mjb4" path="res://assets/Growth/scenes/characters/player.gd" id="2_76oj4"]
 [ext_resource type="Texture2D" uid="uid://bp3sfnx2rutrs" path="res://assets/Growth/graphics/characters/main/main_basic.png" id="3_6eyoc"]
+[ext_resource type="PackedScene" uid="uid://bbmnfqx6hc1ft" path="res://Scenes/UI/tool_ui.tscn" id="3_ukaxf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_atpat"]
 radius = 4.0
@@ -1481,7 +1482,7 @@ nodes/ToolOneShot/node = SubResource("AnimationNodeOneShot_t41h6")
 nodes/ToolOneShot/position = Vector2(540, -140)
 node_connections = [&"output", 0, &"ToolOneShot", &"ToolOneShot", 0, &"MoveStateMachine", &"ToolOneShot", 1, &"ToolStateMachine"]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("2_76oj4")
@@ -1490,6 +1491,7 @@ script = ExtResource("2_76oj4")
 texture = ExtResource("3_6eyoc")
 hframes = 33
 vframes = 4
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1)
@@ -1522,3 +1524,5 @@ parameters/ToolOneShot/request = 0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
+
+[node name="ToolUI" parent="." instance=ExtResource("3_ukaxf")]
