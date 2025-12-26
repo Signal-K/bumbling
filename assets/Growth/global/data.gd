@@ -13,7 +13,7 @@ const PLANT_DATA = {
 		'texture': "res://assets/Growth/graphics/plants/tomato.png",
 		'icon_texture': "res://assets/Growth/graphics/icons/tomato.png",
 		'name':'Tomato',
-		'h_frames': 3,
+		'h_frames': 4,
 		'grow_speed': 0.6,
 		'death_max': 3,
 		'reward': Enums.Item.TOMATO},
@@ -21,7 +21,7 @@ const PLANT_DATA = {
 		'texture': "res://assets/Growth/graphics/plants/corn.png",
 		'icon_texture': "res://assets/Growth/graphics/icons/corn.png",
 		'name':'Corn',
-		'h_frames': 3,
+		'h_frames': 4,
 		'grow_speed': 1.0,
 		'death_max': 2,
 		'reward': Enums.Item.CORN},
@@ -29,7 +29,7 @@ const PLANT_DATA = {
 		'texture': "res://assets/Growth/graphics/plants/tomato.png",
 		'icon_texture': "res://assets/Growth/graphics/icons/pumpkin.png",
 		'name':'Pumpkin',
-		'h_frames': 3,
+		'h_frames': 4,
 		'grow_speed': 0.3,
 		'death_max': 3,
 		'reward': Enums.Item.PUMPKIN},
@@ -37,7 +37,7 @@ const PLANT_DATA = {
 		'texture': "res://assets/Growth/graphics/plants/tomato.png",
 		'icon_texture': "res://assets/Growth/graphics/icons/wheat.png",
 		'name':'Wheat',
-		'h_frames': 3,
+		'h_frames': 4,
 		'grow_speed': 1.0,
 		'death_max': 3,
 		'reward': Enums.Item.WHEAT}}
@@ -86,3 +86,5 @@ const TOOL_STATE_ANIMATIONS = {
 	Enums.Tool.FISH: 'Fish',
 	Enums.Tool.SEED: 'Seed',
 	}
+
+var forecast_rain: bool

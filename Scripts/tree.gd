@@ -14,7 +14,8 @@ var health := 3:
 			$CollisionShape2D.position.y = 8
 
 func _ready() -> void:
-	create_apples(3)
+	$FlashSprite2d.frame = [0, 1].pick_random()
+	create_apples(randi_range(1, 3))
 
 func hit(tool: Enums.Tool):
 	if tool == Enums.Tool.AXE:
@@ -34,4 +35,11 @@ func create_apples(num: int):
 func get_apple():
 	if $Apples.get_children():
 		$Apples.get_children().pick_random().queue_free()
-		pass
+		
+func reset():
+	if health > 0:
+		# Clear old apples first
+		for apple in $Apples.get_children():
+			apple.queue_free()
+		# Create new apples for the new day
+	create_apples(randi_range(1, 3))
