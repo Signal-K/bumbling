@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 var direction: Vector2
 var facing_direction: Vector2 = Vector2.DOWN  # Default facing down
+var last_direction: Vector2 = Vector2.ZERO
 var speed := 50
 
 var can_move: bool = true
@@ -15,6 +16,7 @@ var current_tool: Enums.Tool
 var current_seed: Enums.Seed
 
 signal tool_use(tool: Enums.Tool, pos: Vector2)
+signal day_change
 
 func _ready():
 	animation_tree.active = true
@@ -24,6 +26,17 @@ func _physics_process(_delta: float) -> void:
 		get_basic_inputs()
 		move()
 		animate()
+		
+	if direction:
+		last_direction = direction
+		var ray_y = int(direction.y) if not direction.x else 0
+		$RayCast2D.target_position = (Vector2(direction.x, ray_y).normalized() * 20)
+	
+func _on_player_day_change() -> void:
+	day_restart()
+
+func day_restart() -> void:
+	day_change_emit()
 	
 func get_basic_inputs():
 	if Input.is_action_just_pressed("tool_forward") or Input.is_action_just_pressed("tool_backward"):
@@ -36,8 +49,11 @@ func get_basic_inputs():
 		$ToolUI.reveal(false)
 	
 	if Input.is_action_just_pressed("action"):
-		tool_state_machine.travel(Data.TOOL_STATE_ANIMATIONS[current_tool])
-		$Animation/AnimationTree.set("parameters/ToolOneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
+		if not $RayCast2D.get_collider():
+			tool_state_machine.travel(Data.TOOL_STATE_ANIMATIONS[current_tool])
+			$Animation/AnimationTree.set("parameters/ToolOneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
+		else:
+			$RayCast2D.get_collider().interact(self)
 
 func move():
 	direction = Input.get_vector("left", "right", "up", "down")
@@ -75,3 +91,6 @@ func _on_animation_tree_animation_started(_anim_name: StringName) -> void:
 func _on_animation_tree_animation_finished(_anim_name: StringName) -> void:
 	can_move = true
  
+func day_change_emit():
+	day_change.emit()
+	pass

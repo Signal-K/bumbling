@@ -1491,6 +1491,7 @@ script = ExtResource("2_76oj4")
 texture = ExtResource("3_6eyoc")
 hframes = 33
 vframes = 4
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1)
@@ -1525,3 +1526,7 @@ parameters/ToolOneShot/request = 0
 zoom = Vector2(4, 4)
 
 [node name="ToolUI" parent="." instance=ExtResource("3_ukaxf")]
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 20)
+collision_mask = 8

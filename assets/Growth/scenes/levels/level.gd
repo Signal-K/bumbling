@@ -131,3 +131,7 @@ func level_reset():
 			
 	raining = Data.forecast_rain
 	Data.forecast_rain = [true, false].pick_random()
+	
+	if raining:
+		for cell in $Layers/SoilLayer.get_used_cells():
+			$Layers/SoilWaterLayer.set_cell(cell, 0, Vector2i(randi_range(0,2), 0))

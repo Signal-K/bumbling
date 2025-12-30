@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://dkaf0otbgtrp5"]
+[gd_scene load_steps=31 format=4 uid="uid://dkaf0otbgtrp5"]
 
 [ext_resource type="Texture2D" uid="uid://b1cmu3aai85qc" path="res://assets/Growth/graphics/tilesets/grass.png" id="1_8bmmf"]
 [ext_resource type="Texture2D" uid="uid://bhd33vu4qpbph" path="res://assets/Growth/graphics/tilesets/water.png" id="1_b324s"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dbequedieolio" path="res://Scenes/Objects/simple_object.tscn" id="9_ulvkc"]
 [ext_resource type="Shader" uid="uid://e678m5gf47jd" path="res://assets/Growth/graphics/shaders/circle_transition.gdshader" id="10_45gsi"]
 [ext_resource type="PackedScene" uid="uid://cut4bf6pimflt" path="res://Scenes/UI/plant_info_container.tscn" id="11_8viim"]
+[ext_resource type="PackedScene" uid="uid://dte8qic8phasx" path="res://Scenes/Level/house.tscn" id="11_ctbh7"]
 [ext_resource type="Texture2D" uid="uid://da1u0rhfjt8a3" path="res://assets/Growth/graphics/weather/drops.png" id="13_dahba"]
 
 [sub_resource type="Gradient" id="Gradient_ulvkc"]
@@ -1286,6 +1287,7 @@ tile_set = SubResource("TileSet_ulvkc")
 
 [node name="MarsLayer" type="TileMapLayer" parent="Layers"]
 z_index = -2
+tile_map_data = PackedByteArray("AAD//wkAAAACAAIAAAD//wgAAAACAAEAAAD//wcAAAACAAEAAAD//wYAAAACAAAAAAD+/wkAAAABAAIAAAD+/wgAAAABAAEAAAD+/wcAAAABAAQAAAD+/wYAAAABAAAAAAD9/wkAAAABAAIAAAD9/wgAAAACAAQAAAD9/wcAAAABAAEAAAD9/wYAAAABAAAAAAD8/wkAAAABAAIAAAD8/wgAAAAAAAQAAAD8/wcAAAACAAQAAAD8/wYAAAABAAAAAAD7/wkAAAAAAAIAAAD7/wgAAAAAAAEAAAD7/wcAAAAAAAEAAAD7/wYAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_mars")
 
 [node name="SoilWaterLayer" type="TileMapLayer" parent="Layers"]
@@ -1294,6 +1296,7 @@ position = Vector2(186, 342)
 tile_set = SubResource("TileSet_water")
 
 [node name="RainFloorParticles" type="GPUParticles2D" parent="Layers"]
+z_index = -1
 material = SubResource("CanvasItemMaterial_dahba")
 emitting = false
 texture = ExtResource("7_epti7")
@@ -1348,15 +1351,21 @@ position = Vector2(393, 200)
 [node name="SimpleObject" parent="Objects" instance=ExtResource("9_ulvkc")]
 z_index = -1
 position = Vector2(188, 314)
-size = 0
+size = 1
 style = 1
 
 [node name="SimpleObject2" parent="Objects" instance=ExtResource("9_ulvkc")]
 position = Vector2(175, 300)
-size = 3
+style = 1
 
 [node name="SimpleObject3" parent="Objects" instance=ExtResource("9_ulvkc")]
+z_index = -1
 position = Vector2(228, 310)
+size = 0
+style = 1
+
+[node name="House" parent="Objects" instance=ExtResource("11_ctbh7")]
+position = Vector2(180, 272)
 
 [node name="Timers" type="Node2D" parent="."]
 
